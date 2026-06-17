@@ -3,90 +3,198 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Buckler Group | Institutional Advisory for Caribbean Development</title>
-  <meta name="description" content="The Buckler Group is an institutional advisory platform advancing hospitality, real estate, capital formation and the Caribbean Renaissance™." />
+  <title>The Buckler Group | Caribbean Renaissance™</title>
+  <meta name="description" content="The Buckler Group is the institutional platform advancing the Caribbean Renaissance™—a long-horizon framework for coordinating capital, development, hospitality, infrastructure and governance across the Caribbean." />
   <style>
     :root{
-      --black:#030303;--bone:#f4efe6;--stone:#bfb5a6;--muted:#857c70;--gold:#c59b5c;--max:1200px;
-      --panel:#0b0b0b;--line:rgba(197,155,92,.16);
+      --black:#020202;
+      --ink:#080808;
+      --panel:#111111;
+      --panel2:#161616;
+      --navy:#050d18;
+      --bone:#f4efe6;
+      --stone:#bfb5a6;
+      --muted:#857c70;
+      --gold:#c59b5c;
+      --gold2:#d8ad69;
+      --goldDark:#735631;
+      --line:rgba(197,155,92,.22);
+      --lineSoft:rgba(197,155,92,.12);
+      --max:1240px;
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;background:var(--black);color:var(--bone);font-family:Inter,Helvetica,Arial,sans-serif;line-height:1.45}
-    a{color:inherit;text-decoration:none}
-    .container{width:min(var(--max),92%);margin:0 auto}
+    body{
+      margin:0;background:var(--black);color:var(--bone);
+      font-family:"Helvetica Neue",Arial,Helvetica,sans-serif;
+      line-height:1.45;-webkit-font-smoothing:antialiased;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(var(--max),90%);margin:0 auto}
 
-    header{position:fixed;inset:0 0 auto 0;background:rgba(2,2,2,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:120}
-    nav{min-height:78px;display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;gap:12px;align-items:center}
-    .crest{width:48px;height:56px}
-    .wordmark strong{display:block;font-family:Georgia,serif;font-size:16px}
-    .wordmark small{display:block;color:var(--muted);font-size:10px;letter-spacing:.12em;text-transform:uppercase}
-    .nav-links{display:flex;gap:20px;align-items:center;color:var(--stone);font-size:12px;text-transform:uppercase;font-weight:700}
-    .nav-cta{border:1px solid var(--gold);padding:10px 14px;color:var(--gold);font-weight:800}
+    .brand-lockup{display:inline-flex;align-items:center;gap:16px}
+    .crest{width:54px;height:64px;display:inline-block;flex:0 0 auto}
+    .crest svg{width:100%;height:100%;display:block}
+    .wordmark{display:grid;gap:4px}
+    .wordmark strong{
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:19px;line-height:1;letter-spacing:.06em;font-weight:500;color:var(--bone);
+    }
+    .wordmark small{
+      color:var(--muted);font-size:9px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;white-space:nowrap;
+    }
+
+    header{
+      position:fixed;inset:0 0 auto 0;z-index:100;
+      background:rgba(2,2,2,.92);backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--lineSoft);
+    }
+    nav{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:26px}
+    .nav-links{
+      display:flex;align-items:center;gap:26px;color:var(--stone);
+      font-size:10px;letter-spacing:.15em;text-transform:uppercase;font-weight:800;white-space:nowrap;
+    }
+    .nav-links a:hover{color:var(--gold)}
+    .nav-cta{border:1px solid var(--gold);padding:13px 18px;color:var(--gold)}
 
     /* Hero */
-    .hero{min-height:72vh;display:grid;align-items:center;padding:140px 0 70px;background:linear-gradient(180deg,rgba(2,2,2,.94),rgba(2,2,2,.86));background-image:linear-gradient(180deg,rgba(2,2,2,.94),rgba(2,2,2,.86)),url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 600%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%22 x2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%23c59b5c%22 stop-opacity=%22.06%22/%3E%3Cstop offset=%221%22 stop-color=%22%23000000%22 stop-opacity=%22.02%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%221200%22 height=%22600%22 fill=%22%23020508%22/%3E%3Cellipse cx=%22900%22 cy=%22140%22 rx=%22320%22 ry=%22420%22 fill=%22url(%23g)%22/%3E%3C/svg%3E');background-size:cover;background-position:center}
-    .hero .inner{display:grid;grid-template-columns:1fr .54fr;gap:44px;align-items:center}
-    .hero h1{margin:0;color:var(--bone);font-family:Georgia,serif;font-size:clamp(30px,4.6vw,48px);line-height:1.02}
-    .hero p.lead{color:var(--stone);margin-top:18px;max-width:760px;font-size:17px}
-    .hero .cta-row{margin-top:28px;display:flex;gap:14px}
-    .btn{padding:12px 18px;border-radius:6px;border:1px solid var(--gold);font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
-    .btn.primary{background:linear-gradient(135deg,var(--gold),#735631);color:#050505;border-color:transparent}
-    .btn.ghost{background:transparent;color:var(--bone);border-color:rgba(255,255,255,.08)}
+    .hero{
+      min-height:100vh;
+      display:grid;
+      align-items:end;
+      padding:150px 0 86px;
+      background:
+        linear-gradient(90deg,rgba(2,2,2,.96),rgba(2,2,2,.74) 44%,rgba(2,2,2,.34)),
+        linear-gradient(180deg,rgba(2,2,2,.10),rgba(2,2,2,.98) 93%),
+        radial-gradient(circle at 76% 24%,rgba(197,155,92,.13),transparent 34%),
+        url('/assets/images/hero-renaissance.jpg');
+      background-size:cover;
+      background-position:center;
+    }
+    .eyebrow{margin:0 0 18px;color:var(--gold);font-size:10px;letter-spacing:.28em;text-transform:uppercase;font-weight:900}
+    .hero h1{
+      margin:0;max-width:990px;color:var(--bone);
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(52px,6.3vw,96px);line-height:.97;letter-spacing:-.06em;font-weight:500;
+    }
+    .hero .sub{
+      margin:24px 0 0;
+      max-width:790px;
+      color:var(--stone);
+      font-size:clamp(18px,1.45vw,22px);
+      font-weight:300;
+      letter-spacing:-.012em;
+    }
+    .hero-meta{
+      margin-top:32px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px 34px;
+      color:var(--gold);
+      font-size:11px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-weight:800;
+    }
 
-    /* Imagery column */
-    .visual-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-    .visual{background:linear-gradient(180deg,#0a0a0a,#050505);padding:12px;border:1px solid var(--line);min-height:120px;display:flex;align-items:center;justify-content:center}
-    .visual svg{width:100%;height:100%;max-width:260px}
+    section{padding:92px 0;border-top:1px solid var(--lineSoft)}
+    .section-grid{display:grid;grid-template-columns:.86fr 1.5fr;gap:72px;align-items:start}
+    h2{margin:0;max-width:1000px;color:var(--bone);font-size:clamp(32px,3.8vw,58px);line-height:1.04;letter-spacing:-.05em;font-weight:500}
+    h3{margin:0 0 13px;color:var(--bone);font-size:21px;line-height:1.14;letter-spacing:-.026em;font-weight:650}
+    h4{margin:0 0 10px;color:var(--gold);font-size:10px;letter-spacing:.17em;text-transform:uppercase;font-weight:900}
+    p{margin:0 0 14px;color:var(--stone);font-size:15.5px;font-weight:350}
+    .lead{color:var(--stone);font-size:21px;line-height:1.42;font-weight:300;letter-spacing:-.012em}
+    .dark{background:var(--navy)}
+    .deep{background:#010812}
 
-    /* Pillars */
-    .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:54px}
-    .pillar{background:linear-gradient(180deg,#0b0b0b,#070707);padding:28px;border:1px solid var(--line)}
-    .pillar .icon{width:56px;height:56px;margin-bottom:16px}
-    .pillar h3{margin:0;font-size:18px;color:var(--bone)}
-    .pillar p{color:var(--stone);margin-top:12px}
-    .pillar a{display:inline-block;margin-top:18px;color:var(--gold);font-weight:800}
+    .declaration{
+      background:var(--bone);
+      color:#050505;
+      text-align:center;
+      padding:96px 0;
+    }
+    .declaration .eyebrow{color:var(--goldDark)}
+    .declaration h2{
+      margin:0 auto;
+      max-width:920px;
+      color:#050505;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(46px,7vw,112px);
+      line-height:.92;
+      letter-spacing:-.065em;
+    }
+    .declaration p{
+      max-width:760px;
+      margin:26px auto 0;
+      color:#3d372f;
+      font-size:20px;
+      line-height:1.45;
+      font-weight:300;
+    }
 
-    /* Insights */
-    .insights{margin-top:64px}
-    .insights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .insight{background:var(--panel);padding:20px;border:1px solid var(--line)}
-    .insight h4{margin:0;color:var(--bone)}
-    .insight p{color:var(--stone);margin-top:10px}
+    .framework{
+      background:
+        linear-gradient(180deg,rgba(2,2,2,.98),rgba(6,18,31,.93)),
+        radial-gradient(circle at 74% 26%,rgba(197,155,92,.10),transparent 34%);
+    }
 
-    /* Jurisdictions */
-    .jurisdictions{margin-top:64px}
-    .jur-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .jur{background:linear-gradient(180deg,#0b0b0b,#050505);padding:20px;border:1px solid var(--line)}
-    .jur h4{margin:0;color:var(--bone)}
-    .jur p{color:var(--stone);margin-top:10px}
+    /* Visual thesis uses an institutional hero image */
+    .visual-thesis{
+      min-height:420px;
+      background:
+        linear-gradient(90deg,rgba(2,2,2,.92),rgba(2,2,2,.55),rgba(2,2,2,.92)),
+        url('/assets/images/visual-thesis.jpg');
+      background-size:cover;
+      background-position:center;
+      display:grid;
+      align-items:center;
+    }
 
-    /* Contact CTA */
-    .contact-cta{margin-top:64px;background:linear-gradient(180deg,#0a0a0a,#050505);padding:48px;border:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .contact-cta h3{margin:0;color:var(--bone);font-size:22px}
-    .contact-cta p{margin:6px 0 0;color:var(--stone)}
+    /* rest unchanged... */
+    .advantage-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:38px}
+    .advantage{background:var(--panel);padding:28px;min-height:220px}
+    .selected-list{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:36px}
+    .selected-item{display:grid;grid-template-columns:.85fr 1.9fr;gap:28px;background:var(--panel);padding:28px}
 
-    footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:12px;margin-top:64px}
+    .button-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
+    .btn{min-height:50px;padding:14px 22px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--gold);color:var(--bone);font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+    .btn.primary{background:linear-gradient(135deg,var(--gold2),var(--goldDark));color:#050505;border-color:var(--gold2)}
+    .btn:hover{background:rgba(197,155,92,.12)}
 
-    @media(max-width:980px){.hero .inner{grid-template-columns:1fr}.nav-links{display:none}.pillars,.insights-grid,.jur-grid{grid-template-columns:1fr}.visual-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:520px){.hero{padding-top:110px}.crest{display:none}}
+    footer{padding:34px 0;border-top:1px solid var(--line);color:var(--muted);font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:900}
+    .footer-flex{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px}
+
+    @media(max-width:1150px){.platform-grid{grid-template-columns:repeat(2,1fr)}.advantage-grid{grid-template-columns:1fr 1fr}.pillars{grid-template-columns:repeat(3,1fr)}.coverage-filters{grid-template-columns:1fr 1fr}.priority-row{grid-template-columns:1fr}}
+    @media(max-width:1000px){.nav-links{display:none}.wordmark small{display:none}.section-grid,.profile{grid-template-columns:1fr;gap:34px}.framework-grid,.card-grid-3,.architecture-map{grid-template-columns:1fr}.advisory-item,.selected-item{grid-template-columns:1fr}.hero{padding-top:130px}section{padding:74px 0}}
+    @media(max-width:640px){.platform-grid,.advantage-grid,.coverage-filters,.pillars{grid-template-columns:1fr}.hero h1{font-size:46px}}
   </style>
 </head>
+
 <body>
 <header>
   <div class="container">
     <nav>
-      <a class="brand" href="#">
-        <svg class="crest" viewBox="0 0 120 140" role="img" aria-label="The Buckler Group Crest"><defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#d8ad69"/><stop offset="1" stop-color="#6d512d"/></linearGradient></defs><rect width="120" height="140" rx="10" fill="#050505" stroke="url(#g1)" stroke-width="3"/><text x="60" y="86" fill="url(#g1)" text-anchor="middle" font-family="Georgia, serif" font-size="36">TBG</text></svg>
-        <span class="wordmark"><strong>The Buckler Group</strong><small>Institutional Advisory · Hospitality · Development · Capital</small></span>
+      <a class="brand-lockup" href="#">
+        <span class="crest" aria-hidden="true">
+          <!-- Keep SVG crest for brand mark -->
+          <svg viewBox="0 0 120 140" role="img" aria-label="The Buckler Group Crest">
+            <defs><linearGradient id="gold" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#d8ad69"/><stop offset=".46" stop-color="#b08a57"/><stop offset="1" stop-color="#6d512d"/></linearGradient></defs>
+            <path d="M60 6 C78 18 95 22 112 22 L112 72 C112 101 88 124 60 136 C32 124 8 101 8 72 L8 22 C25 22 42 18 60 6 Z" fill="#050505" stroke="url(#gold)" stroke-width="4"/>
+            <text x="60" y="82" text-anchor="middle" font-family="Georgia, serif" font-size="42" fill="url(#gold)" letter-spacing="-3">TBG</text>
+          </svg>
+        </span>
+        <span class="wordmark">
+          <strong>The Buckler Group</strong>
+          <small>Real Estate · Capital · Development</small>
+        </span>
       </a>
       <div class="nav-links">
-        <a href="#renaissance">Caribbean Renaissance™</a>
-        <a href="#sessions">Strategic Sessions</a>
-        <a href="#exodus">EXODUS™</a>
-        <a href="#insights">Insights</a>
-        <a href="#jurisdictions">Jurisdictions</a>
+        <a href="#renaissance">Renaissance</a>
+        <a href="#proof">Proof</a>
+        <a href="#coverage">Markets</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#advisory">Advisory</a>
         <a class="nav-cta" href="#contact">Contact</a>
       </div>
     </nav>
@@ -96,130 +204,208 @@
 <main>
   <section class="hero">
     <div class="container">
-      <div class="inner">
-        <div>
-          <p class="eyebrow" style="color:var(--gold);letter-spacing:.18em;text-transform:uppercase;font-weight:800;margin-bottom:12px">Advisory Platform</p>
-          <h1>Building Order. Advancing Opportunity.</h1>
-          <p class="lead">Strategic advisory services at the intersection of hospitality, development, capital, and the Caribbean Renaissance™.</p>
-          <div class="cta-row">
-            <a class="btn primary" href="mailto:browne.brain@gmail.com?subject=Request%20Strategic%20Advisory">Request Strategic Advisory</a>
-            <a class="btn ghost" href="#renaissance">Explore Caribbean Renaissance™</a>
-          </div>
-        </div>
+      <p class="eyebrow">The Buckler Group</p>
+      <h1>Building the Institutional Infrastructure of Caribbean Development</h1>
+      <p class="sub">The Buckler Group is the institutional platform advancing the Caribbean Renaissance™ — a long-horizon framework for coordinating capital, development, hospitality, infrastructure and governance across the Caribbean basin.</p>
+      <div class="hero-meta">
+        <span>Real Estate</span>
+        <span>Capital</span>
+        <span>Development</span>
+        <span>Caribbean Renaissance™</span>
+      </div>
 
-        <div class="visual-grid" aria-hidden="true">
-          <div class="visual" title="Executive meetings">
-            <!-- Simple illustrative SVG for executive meetings -->
-            <svg viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg" role="img"><rect x="10" y="40" width="220" height="60" rx="6" fill="#0f1620" stroke="#1f1f1f"/><g fill="#c59b5c"><circle cx="60" cy="70" r="8"/><circle cx="120" cy="70" r="8"/><circle cx="180" cy="70" r="8"/></g><rect x="36" y="30" width="168" height="10" rx="3" fill="#0b0b0b"/></svg>
-          </div>
-          <div class="visual" title="Development projects">
-            <svg viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="60" width="40" height="50" fill="#0b0b0b"/><rect x="72" y="40" width="36" height="70" fill="#0d0d0d"/><rect x="116" y="30" width="60" height="80" fill="#0f0f0f"/><g fill="#c59b5c"><rect x="22" y="52" width="36" height="6"/><rect x="74" y="32" width="28" height="6"/><rect x="118" y="22" width="44" height="6"/></g></svg>
-          </div>
-          <div class="visual" title="Hospitality assets">
-            <svg viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg"><rect x="28" y="36" width="184" height="76" rx="6" fill="#0c0c0c"/><g fill="#c59b5c"><rect x="44" y="52" width="30" height="10"/><rect x="86" y="52" width="30" height="10"/><rect x="128" y="52" width="30" height="10"/></g></svg>
-          </div>
-          <div class="visual" title="Infrastructure investment">
-            <svg viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg"><rect x="18" y="68" width="28" height="44" fill="#0b0b0b"/><rect x="56" y="52" width="20" height="60" fill="#0f0f0f"/><rect x="88" y="42" width="44" height="70" fill="#090909"/><g fill="#c59b5c"><rect x="16" y="60" width="32" height="6"/><rect x="54" y="44" width="24" height="6"/><rect x="86" y="34" width="48" height="6"/></g></svg>
-          </div>
+      <!-- Institutional imagery column: reference curated images in /assets/images -->
+      <div style="margin-top:28px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
+        <div style="min-height:120px;overflow:hidden;border:1px solid var(--line);background:#050505;display:grid;place-items:center">
+          <img src="/assets/images/executive-meetings.jpg" alt="Executive meetings" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+        <div style="min-height:120px;overflow:hidden;border:1px solid var(--line);background:#050505;display:grid;place-items:center">
+          <img src="/assets/images/mixed-use-development.jpg" alt="Mixed-use development" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+        <div style="min-height:120px;overflow:hidden;border:1px solid var(--line);background:#050505;display:grid;place-items:center">
+          <img src="/assets/images/hospitality-asset.jpg" alt="Hospitality asset" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+        <div style="min-height:120px;overflow:hidden;border:1px solid var(--line);background:#050505;display:grid;place-items:center">
+          <img src="/assets/images/infrastructure-project.jpg" alt="Infrastructure investment" style="width:100%;height:100%;object-fit:cover;display:block">
         </div>
       </div>
 
-      <!-- Strategic pillars -->
-      <div class="pillars" style="margin-top:42px" id="pillars">
-        <article class="pillar" id="renaissance">
-          <div class="icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" class="icon" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" fill="#0b0b0b" stroke="#c59b5c"/><path d="M12 30h24M16 20h16" stroke="#c59b5c" stroke-width="2" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Caribbean Renaissance™</h3>
-          <p>A long-horizon framework aligning capital, policy, and development to scale resilient, investable outcomes across the Caribbean basin.</p>
-          <a href="#renaissance">Learn more →</a>
-        </article>
+    </div>
+  </section>
 
-        <article class="pillar" id="sessions">
-          <div class="icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" class="icon" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="10" width="36" height="28" rx="2" fill="#0b0b0b" stroke="#c59b5c"/><path d="M12 20h24M12 28h10" stroke="#c59b5c" stroke-width="2" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Strategic Sessions</h3>
-          <p>Closed, high-trust convenings where public and private leaders align on projects, policy, and capital deployment pathways.</p>
-          <a href="#sessions">Register / Inquire →</a>
-        </article>
+  <section class="declaration">
+    <div class="container">
+      <p class="eyebrow">Institutional Declaration</p>
+      <h2>2026<br/>The Year of the Caribbean Renaissance™</h2>
+      <p>Announced by The Buckler Group as a platform year for strategic engagement, market intelligence, development readiness and institutional coordination across the Caribbean and its diaspora.
+      </p>
+    </div>
+  </section>
 
-        <article class="pillar" id="exodus">
-          <div class="icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" class="icon" xmlns="http://www.w3.org/2000/svg"><path d="M24 4v14" stroke="#c59b5c" stroke-width="2" stroke-linecap="round"/><rect x="8" y="22" width="32" height="18" rx="2" fill="#0b0b0b" stroke="#c59b5c"/></svg>
-          </div>
-          <h3>EXODUS™</h3>
-          <p>A program mobilizing diaspora capital, talent and relocations to accelerate development outcomes and community resilience.</p>
-          <a href="#exodus">Explore EXODUS™ →</a>
-        </article>
+  <section id="renaissance" class="framework">
+    <div class="container">
+      <p class="eyebrow">Governing Thesis</p>
+      <h2>Caribbean Renaissance™ is the governing framework of The Buckler Group.</h2>
+      <div class="framework-grid">
+        <div class="framework-card"><span class="number">01</span><h3>Fragmented Opportunity</h3><p>Across the Caribbean, real estate, tourism, infrastructure, culture and diaspora capital often require institutional coordination to realize scale.</p></div>
+        <div class="framework-card"><span class="number">02</span><h3>Institutional Coordination</h3><p>The framework organizes governments, investors, developers, practitioners and diaspora stakeholders into governance and execution pathways.</p></div>
+        <div class="framework-card"><span class="number">03</span><h3>Durable Execution</h3><p>The objective is to move from aspiration to execution through intelligence, stakeholder rooms, capital alignment and disciplined project pipelines.</p></div>
       </div>
 
-      <!-- Insights preview -->
-      <section class="insights" id="insights">
-        <div style="display:flex;justify-content:space-between;align-items:end"><h2 style="margin:0;font-size:22px">Insights</h2><a href="#insights" style="color:var(--gold);font-weight:800">View all insights →</a></div>
-        <div class="insights-grid" style="margin-top:18px">
-          <article class="insight">
-            <h4>Caribbean Development Outlook 2026</h4>
-            <p>Flagship annual assessment of tourism, infrastructure and capital trends shaping investable opportunity across the region.</p>
-            <a href="#">Read summary →</a>
-          </article>
-          <article class="insight">
-            <h4>Jurisdiction Brief: Guyana</h4>
-            <p>Opportunity brief assessing readiness, entitlement considerations and key investment themes for Guyana.</p>
-            <a href="#">Download brief →</a>
-          </article>
-          <article class="insight">
-            <h4>Entitlement Intelligence Notes</h4>
-            <p>Concise, jurisdiction-level notes on zoning, approvals and pre-development constraints that influence execution risk.</p>
-            <a href="#">Explore notes →</a>
-          </article>
-        </div>
-      </section>
+      <div class="pillars">
+        <div class="pillar"><span>01</span><strong>Capital Formation</strong></div>
+        <div class="pillar"><span>02</span><strong>Hospitality Development</strong></div>
+        <div class="pillar"><span>03</span><strong>Infrastructure Readiness</strong></div>
+        <div class="pillar"><span>04</span><strong>Climate Resilience</strong></div>
+        <div class="pillar"><span>05</span><strong>Diaspora Participation</strong></div>
+        <div class="pillar"><span>06</span><strong>Institutional Coordination</strong></div>
+      </div>
+    </div>
+  </section>
 
-      <!-- Jurisdiction spotlights -->
-      <section class="jurisdictions" id="jurisdictions">
-        <div style="display:flex;justify-content:space-between;align-items:end"><h2 style="margin:0;font-size:22px">Jurisdiction Spotlights</h2><a href="#jurisdictions" style="color:var(--gold);font-weight:800">View all jurisdictions →</a></div>
-        <div class="jur-grid" style="margin-top:18px">
-          <article class="jur">
-            <h4>Guyana</h4>
-            <p>Active session market: oil-led growth, major infrastructure projects and hospitality demand catalyzing investment opportunities.</p>
-            <a href="#">Read spotlight →</a>
-          </article>
-          <article class="jur">
-            <h4>Barbados</h4>
-            <p>Priority market: tourism modernization, climate resilience investments, and institutional readiness for hotel and mixed-use development.</p>
-            <a href="#">Read spotlight →</a>
-          </article>
-          <article class="jur">
-            <h4>Turks & Caicos</h4>
-            <p>Monitoring market: high-net-worth tourism demand, conservation-led development opportunities and infrastructure constraints.</p>
-            <a href="#">Read spotlight →</a>
-          </article>
-        </div>
-      </section>
+  <section class="visual-thesis">
+    <div class="container">
+      <p class="eyebrow">Institutional Thesis</p>
+      <h2>Many islands. One civilization. A coordinated development future.</h2>
+    </div>
+  </section>
 
-      <!-- Contact CTA -->
-      <section class="contact-cta" id="contact">
-        <div>
-          <h3>Schedule a Strategic Conversation.</h3>
-          <p>For governments, investors, operators and institutional partners seeking disciplined advisory support across hospitality, development and capital formation.</p>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-end">
-          <a class="btn primary" href="mailto:browne.brain@gmail.com?subject=Schedule%20a%20Strategic%20Conversation">Schedule a Strategic Conversation</a>
-          <a class="btn" href="#pillars">Request Program Briefs</a>
-        </div>
-      </section>
+  <!-- ... remaining sections unchanged, but where inline SVGs were used for visuals replaced with image references where appropriate ... -->
 
+  <section id="proof">
+    <div class="container">
+      <p class="eyebrow">Selected Engagements</p>
+      <h2>Institutional proof points and platform development.</h2>
+      <div class="selected-list">
+        <div class="selected-item"><span>Strategic Convening</span><div><strong>Caribbean Entitlement & Hospitality Strategic Sessions</strong><p>Curated monthly forum connecting governments, investors, operators and institutional partners to advance project pipelines and clarify entitlement pathways.</p></div></div>
+        <div class="selected-item"><span>Regional Listening</span><div><strong>Caribbean Consular Engagement</strong><p>Dialogue with diplomatic and consular stakeholders regarding development readiness and transnational coordination.</p></div></div>
+        <div class="selected-item"><span>Industry Platform</span><div><strong>Real Estate Leadership & Practitioner Networks</strong><p>Real estate education, executive convening and practitioner networks to support execution capacity.</p></div></div>
+        <div class="selected-item"><span>Development Intelligence</span><div><strong>Caribbean Development Screening</strong><p>Ongoing review of jurisdiction readiness, hospitality demand, entitlement pathways and investor alignment.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="coverage" class="deep">
+    <div class="container">
+      <p class="eyebrow">Market Coverage & Prioritization</p>
+      <h2>Disciplined coverage across 20+ Caribbean jurisdictions, with priority focus on markets where capital, infrastructure, tourism demand and public-sector readiness converge.</h2>
+      <div class="market-lens">
+        <p class="lead">The Buckler Group does not approach the Caribbean as a single undifferentiated market. Each jurisdiction is assessed through a disciplined development-readiness lens: land availability, entitlement risk, infrastructure sequencing and market demand.</p>
+      </div>
+
+      <div class="priority-table">
+        <div class="priority-row priority-head"><span>Tier</span><span>Markets</span><span>Strategic Logic</span></div>
+        <div class="priority-row"><span><strong>Active Session Markets</strong></span><span>Guyana</span><span>Current strategic session focus; oil-led growth, infrastructure expansion and hospitality demand.</span></div>
+        <div class="priority-row"><span><strong>Priority 2026 Markets</strong></span><span>Barbados, Bahamas, Grenada, Tobago, Antigua & Barbuda</span><span>Near-term session development, stakeholder readiness and capital alignment priorities.</span></div>
+        <div class="priority-row"><span><strong>Monitoring Markets</strong></span><span>Jamaica, Trinidad, St. Lucia, St. Vincent, Dominica, St. Kitts & Nevis, Turks & Caicos, Cayman Islands, Belize</span><span>Longer-term intelligence and opportunity tracking.</span></div>
+        <div class="priority-row"><span><strong>Regional Intelligence Scope</strong></span><span>Wider Caribbean basin</span><span>Long-term market intelligence, practitioner-network mapping, diaspora engagement and execution frameworks.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="leadership">
+    <div class="container">
+      <p class="eyebrow">Leadership</p>
+      <h2>Institutional platform. Recognizable principal. Expandable advisory bench.</h2>
+      <div class="profile">
+        <div class="portrait" style="background:#070707;border:1px solid var(--line);min-height:420px;display:grid;place-items:center;overflow:hidden">
+          <img src="/assets/images/leadership/christopher-browne.jpg" alt="Christopher A. Browne" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+        <div class="profile-copy">
+          <h3>Founder & Chief Executive Officer</h3>
+          <p class="lead">Christopher A. Browne leads The Buckler Group’s work across Caribbean development strategy, real estate advisory, diaspora capital formation and institutional convening.</p>
+          <p>The firm’s advisory posture is built around a conservative operating principle: credibility before scale, relationships before transactions, and execution before promotion.</p>
+          <div class="credentials">
+            <span class="credential">Cornell Baker Program in Real Estate</span>
+            <span class="credential">Economic Development</span>
+            <span class="credential">Hospitality Strategy</span>
+            <span class="credential">Caribbean Development</span>
+            <span class="credential">Public-Private Strategy</span>
+            <span class="credential">Diaspora Capital</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="platform">
+    <div class="container">
+      <p class="eyebrow">Operating Channels</p>
+      <h2>The Caribbean Renaissance™ moves through structured platform mechanisms.</h2>
+      <div class="platform-grid">
+        <article class="platform-card"><div class="platform-icon">◎</div><h3>Development Tracker</h3><p>Jurisdiction-level visibility into development themes, market readiness and opportunity pipelines.</p></article>
+        <article class="platform-card"><div class="platform-icon">▥</div><h3>Opportunity Exchange</h3><p>A curated pipeline of investable themes across hospitality, mixed-use and infrastructure.</p></article>
+        <article class="platform-card"><div class="platform-icon">◌</div><h3>Strategic Sessions</h3><p>High-trust convenings aligning public and private sector leaders around actionable development projects.</p></article>
+        <article class="platform-card"><div class="platform-icon">▤</div><h3>Intelligence Library</h3><p>Briefings, outlooks and entitlement intelligence shaping better decisions and stronger execution.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="intelligence" class="deep">
+    <div class="container">
+      <p class="eyebrow">The Buckler Group Intelligence</p>
+      <h2>Research products that organize markets.</h2>
+      <div class="card-grid-3">
+        <div class="library-card"><span class="tag">Flagship Annual</span><h3>Caribbean Development Outlook</h3><p>The firm’s annual flagship publication on tourism, infrastructure, climate adaptation and capital formation.</p></div>
+        <div class="library-card"><span class="tag">Jurisdiction Brief</span><h3>Guyana Development Opportunity Brief</h3><p>Oil-led growth, hospitality demand, infrastructure expansion and land-marshalling considerations.</p></div>
+        <div class="library-card"><span class="tag">Entitlement</span><h3>Entitlement Intelligence Notes</h3><p>Jurisdiction-specific notes on zoning, approvals, land use and development control that influence execution risk.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pathways">
+    <div class="container">
+      <p class="eyebrow">Engagement Pathways</p>
+      <h2>How stakeholders enter The Buckler Group platform.</h2>
+      <div class="card-grid-3">
+        <div class="pathway"><h3>Governments & IPAs</h3><p>Present priority opportunities, attract qualified investors, structure inward missions and improve investment-readiness narratives.</p></div>
+        <div class="pathway"><h3>Investors & Family Offices</h3><p>Access jurisdiction intelligence, closed executive sessions, opportunity screening and curated Caribbean development exposure.</p></div>
+        <div class="pathway"><h3>Developers & Landowners</h3><p>Position projects for capital, improve development readiness, evaluate entitlement risk and engage qualified partners.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="eyebrow">Brand Architecture</p>
+      <h2>The Buckler Group is the institution. Caribbean Renaissance™ is the governing thesis.</h2>
+      <div class="architecture-map">
+        <div class="architecture-card"><h4>Institution</h4><h3>The Buckler Group</h3><p>The advisory, intelligence and convening platform that organizes development strategy, capital alignment and execution.</p></div>
+        <div class="architecture-card"><h4>Governing Thesis</h4><h3>Caribbean Renaissance™</h3><p>The long-horizon regional framework for diaspora capital, hospitality development and climate resilience.</p></div>
+        <div class="architecture-card"><h4>Market Mechanisms</h4><h3>Strategic Sessions + Intelligence</h3><p>The visible operating channels through which jurisdictions, investors, developers and operators coordinate and execute.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-band">
+    <div class="container">
+      <p class="eyebrow">Governing Thought</p>
+      <h2>The Caribbean does not suffer from a shortage of opportunity. It suffers from a shortage of coordinated institutional infrastructure.</h2>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container section-grid">
+      <div>
+        <p class="eyebrow">Engage The Buckler Group</p>
+        <h2>Request a strategic briefing.</h2>
+      </div>
+      <div>
+        <p class="lead">For governments, investors, developers, institutions and strategic partners seeking disciplined advisory support across Caribbean development, hospitality, capital formation and entitlement navigation.</p>
+        <div class="button-row">
+          <a class="btn primary" href="mailto:browne.brain@gmail.com?subject=The%20Buckler%20Group%20Strategic%20Briefing%20Request">Contact The Buckler Group</a>
+          <a class="btn" href="mailto:browne.brain@gmail.com?subject=Strategic%20Sessions%20Inquiry">Strategic Sessions Inquiry</a>
+        </div>
+      </div>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="container" style="display:flex;justify-content:space-between;align-items:center">
+  <div class="container footer-flex">
     <div>© 2026 The Buckler Group</div>
-    <div style="color:var(--muted);font-size:12px">Caribbean Renaissance™ · Strategic Advisory · Insights</div>
+    <div>Caribbean Renaissance™ · Real Estate · Capital · Development</div>
   </div>
 </footer>
-
 </body>
 </html>
