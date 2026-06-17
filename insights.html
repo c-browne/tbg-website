@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Insights | The Buckler Group — Strategic Intelligence</title>
+  <meta name="description" content="Institutional insights from The Buckler Group: Caribbean Renaissance™, Hospitality & Tourism, Real Estate & Development, Leadership & Institutions." />
+  <style>
+    :root{--black:#030303;--bone:#f4efe6;--stone:#bfb5a6;--muted:#857c70;--gold:#c59b5c;--max:1200px;--line:rgba(197,155,92,.16)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--black);color:var(--bone);font-family:Inter,Helvetica,Arial,sans-serif;line-height:1.45}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max),92%);margin:0 auto}
+    header{position:fixed;inset:0 0 auto 0;background:rgba(2,2,2,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:120}
+    nav{min-height:78px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:12px;align-items:center}
+    .crest{width:44px;height:52px}
+    .wordmark strong{display:block;font-family:Georgia,serif;font-size:16px}
+    .wordmark small{display:block;color:var(--muted);font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+    .nav-links{display:flex;gap:20px;align-items:center;color:var(--stone);font-size:12px;text-transform:uppercase;font-weight:700}
+    .nav-cta{border:1px solid var(--gold);padding:10px 14px;color:var(--gold);font-weight:800}
+
+    main{padding:120px 0 80px}
+    .hero{padding:38px 0 22px;border-bottom:1px solid var(--line)}
+    .kicker{color:var(--gold);letter-spacing:.18em;text-transform:uppercase;font-weight:800;font-size:12px}
+    .title{font-family:Georgia,serif;font-size:clamp(28px,3.6vw,42px);margin:8px 0;color:var(--bone)}
+    .lead{color:var(--stone);max-width:820px}
+
+    .featured{display:grid;grid-template-columns:1fr 420px;gap:28px;margin-top:26px}
+    .featured-card{background:linear-gradient(180deg,#0b0b0b,#050505);padding:28px;border:1px solid var(--line)}
+    .featured-card .meta{color:var(--gold);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:12px}
+    .featured-card h2{margin:10px 0 6px;font-family:Georgia,serif;font-size:22px}
+    .featured-card p{color:var(--stone)}
+    .featured-visual{background:linear-gradient(180deg,#080808,#050505);border:1px solid var(--line);display:grid;place-items:center;padding:18px}
+
+    /* Controls */
+    .controls{display:flex;gap:18px;align-items:center;margin-top:28px}
+    .filters{display:flex;gap:12px;flex-wrap:wrap}
+    .filter-btn{background:transparent;border:1px solid rgba(255,255,255,.04);padding:8px 12px;color:var(--stone);font-weight:700;text-transform:uppercase;cursor:pointer}
+    .filter-btn.active{background:var(--gold);color:#050505;border-color:var(--gold)}
+    .search{margin-left:auto;display:flex;gap:8px;align-items:center}
+    .search input{background:#0b0b0b;border:1px solid var(--line);color:var(--bone;padding:10px 12px);width:260px;border-radius:6px}
+    .search input::placeholder{color:rgba(255,255,255,.35)}
+
+    /* Grid */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+    .card{background:linear-gradient(180deg,#0b0b0b,#050505);border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column}
+    .card-visual{height:160px;background:#070707;display:grid;place-items:center;border-bottom:1px solid var(--line)}
+    .card-body{padding:18px;flex:1;display:flex;flex-direction:column}
+    .card .meta{color:var(--gold);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:11px}
+    .card h3{margin:8px 0 6px;font-size:18px;color:var(--bone)}
+    .card p{margin:0;color:var(--stone);font-size:14px}
+    .card .read{margin-top:auto;margin-top:16px;color:var(--gold);font-weight:800}
+
+    .newsletter{margin-top:36px;padding:28px;border:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;background:linear-gradient(180deg,#070707,#040404)}
+    .newsletter h4{margin:0;font-size:18px}
+    .newsletter p{color:var(--stone);margin:6px 0 0}
+    .newsletter form{display:flex;gap:10px;align-items:center}
+    .newsletter input[type="email"]{padding:10px 12px;border-radius:6px;border:1px solid var(--line);background:#0b0b0b;color:var(--bone;width:300px}
+    .newsletter button{padding:10px 14px;border-radius:6px;background:var(--gold);border:0;color:#050505;font-weight:800}
+
+    footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:12px;margin-top:40px}
+
+    @media(max-width:980px){.featured{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.search input{width:160px}}
+    @media(max-width:640px){.grid{grid-template-columns:1fr}.search{display:none}.newsletter{flex-direction:column;align-items:flex-start} .newsletter input[type="email"]{width:100%}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="/">
+        <svg class="crest" viewBox="0 0 120 140" role="img" aria-label="The Buckler Group Crest"><defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#d8ad69"/><stop offset="1" stop-color="#6d512d"/></linearGradient></defs><rect width="120" height="140" rx="10" fill="#050505" stroke="url(#g1)" stroke-width="3"/><text x="60" y="86" fill="url(#g1)" text-anchor="middle" font-family="Georgia, serif" font-size="36">TBG</text></svg>
+        <span class="wordmark"><strong>The Buckler Group</strong><small>Institutional Advisory · Hospitality · Development · Capital</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="/index.html">Home</a>
+        <a href="/insights.html">Insights</a>
+        <a href="#">Renaissance</a>
+        <a href="#">Sessions</a>
+        <a class="nav-cta" href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div class="kicker">Insights</div>
+    <h1 class="title">Strategic intelligence for disciplined decision-makers.</h1>
+    <p class="lead">Institutional analysis and programmatic intelligence across Caribbean Renaissance™, hospitality, real estate and institutional leadership. Not commentary — evidence-backed research to inform capital allocation and policy.</p>
+
+    <div class="featured" style="margin-top:18px">
+      <article class="featured-card" aria-labelledby="featured-title">
+        <div class="meta">Featured</div>
+        <h2 id="featured-title">Caribbean Development Outlook 2026</h2>
+        <p class="eyebrow" style="color:var(--muted);font-size:13px;margin-top:6px">Flagship annual — executive summary and key implications for capital, hospitality and infrastructure in the region.</p>
+        <p style="margin-top:12px;color:var(--stone)">This flagship piece synthesizes cross-jurisdictional intelligence into a concise, actionable outlook for institutional investors and public leaders. It highlights prioritized markets, structural constraints and recommended execution pathways.</p>
+        <div style="margin-top:16px"><a href="#" style="color:var(--gold);font-weight:800">Read the executive summary →</a></div>
+      </article>
+
+      <div class="featured-visual">
+        <!-- illustrative visual for featured report -->
+        <svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg" role="img"><rect width="280" height="160" rx="8" fill="#0a0a0a" stroke="#1a1a1a"/><g fill="#c59b5c"><rect x="22" y="36" width="36" height="12"/><rect x="68" y="28" width="40" height="12"/><rect x="116" y="24" width="72" height="12"/></g></svg>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="filters" role="tablist" aria-label="Filter by category">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="renaissance">Caribbean Renaissance™</button>
+        <button class="filter-btn" data-filter="hospitality">Hospitality &amp; Tourism</button>
+        <button class="filter-btn" data-filter="real-estate">Real Estate &amp; Development</button>
+        <button class="filter-btn" data-filter="leadership">Leadership &amp; Institutions</button>
+      </div>
+
+      <div class="search" role="search">
+        <label for="q" class="sr-only">Search insights</label>
+        <input id="q" type="search" placeholder="Search insights by title or summary" aria-label="Search insights" />
+      </div>
+    </div>
+
+    <div class="grid" id="articles">
+      <!-- Cards: include data-category and data-title/data-summary for search -->
+      <article class="card" data-category="renaissance" data-title="Caribbean Development Outlook 2026" data-summary="Flagship annual assessment of tourism, infrastructure and capital trends.">
+        <div class="card-visual" aria-hidden="true">
+          <svg viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg"><rect width="320" height="160" rx="6" fill="#090909"/><g fill="#c59b5c"><rect x="24" y="40" width="48" height="10"/><rect x="84" y="32" width="68" height="10"/><rect x="164" y="26" width="112" height="10"/></g></svg>
+        </div>
+        <div class="card-body">
+          <div class="meta">Caribbean Renaissance™</div>
+          <h3>Caribbean Development Outlook 2026</h3>
+          <p>Flagship annual assessment synthesizing cross-jurisdiction trends shaping investable opportunity across the region.</p>
+          <a class="read" href="#">Read summary →</a>
+        </div>
+      </article>
+
+      <article class="card" data-category="hospitality" data-title="Hotel Demand Shifts 2026" data-summary="Analysis of high-net-worth leisure demand and repositioning strategies for premium resorts.">
+        <div class="card-visual" aria-hidden="true">
+          <svg viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg"><rect width="320" height="160" rx="6" fill="#0a0a0a"/><g fill="#c59b5c"><rect x="36" y="44" width="36" height="12"/><rect x="82" y="36" width="44" height="12"/><rect x="136" y="30" width="84" height="12"/></g></svg>
+        </div>
+        <div class="card-body">
+          <div class="meta">Hospitality &amp; Tourism</div>
+          <h3>Hotel Demand Shifts 2026</h3>
+          <p>Analysis of premium leisure demand and repositioning strategies for upper-upscale and luxury hospitality assets.</p>
+          <a class="read" href="#">Read note →</a>
+        </div>
+      </article>
+
+      <article class="card" data-category="real-estate" data-title="Entitlement Intelligence: Jamaica" data-summary="Concise note on zoning, approval timelines and critical path items for hospitality development.">
+        <div class="card-visual" aria-hidden="true">
+          <svg viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg"><rect width="320" height="160" rx="6" fill="#070707"/><g fill="#c59b5c"><rect x="30" y="48" width="36" height="10"/><rect x="74" y="40" width="60" height="10"/><rect x="140" y="32" width="120" height="10"/></g></svg>
+        </div>
+        <div class="card-body">
+          <div class="meta">Real Estate &amp; Development</div>
+          <h3>Entitlement Intelligence: Jamaica</h3>
+          <p>Concise jurisdiction note on approvals and development control affecting project timelines and investor risk.</p>
+          <a class="read" href="#">Download note →</a>
+        </div>
+      </article>
+
+      <article class="card" data-category="leadership" data-title="Institutional Coordination Framework" data-summary="Design considerations for stakeholder rooms, governance and decision protocols to enable execution at scale.">
+        <div class="card-visual" aria-hidden="true">
+          <svg viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg"><rect width="320" height="160" rx="6" fill="#0b0b0b"/><g fill="#c59b5c"><rect x="34" y="42" width="36" height="10"/><rect x="86" y="34" width="48" height="10"/><rect x="144" y="28" width="102" height="10"/></g></svg>
+        </div>
+        <div class="card-body">
+          <div class="meta">Leadership &amp; Institutions</div>
+          <h3>Institutional Coordination Framework</h3>
+          <p>Designs for stakeholder rooms, governance and decision protocols to reduce friction and accelerate development execution.</p>
+          <a class="read" href="#">Read framework →</a>
+        </div>
+      </article>
+
+      <article class="card" data-category="renaissance" data-title="Diaspora Capital Pathways" data-summary="Structures and legal frameworks to enable diaspora investment into long-horizon hospitality and mixed-use projects.">
+        <div class="card-visual" aria-hidden="true">
+          <svg viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg"><rect width="320" height="160" rx="6" fill="#090909"/><g fill="#c59b5c"><rect x="28" y="40" width="44" height="12"/><rect x="82" y="34" width="66" height="12"/><rect x="156" y="28" width="120" height="12"/></g></svg>
+        </div>
+        <div class="card-body">
+          <div class="meta">Caribbean Renaissance™</div>
+          <h3>Diaspora Capital Pathways</h3>
+          <p>Practical vehicles and governance structures to mobilize diaspora capital for infrastructure and housing-led development.</p>
+          <a class="read" href="#">Explore →</a>
+        </div>
+      </article>
+
+      <article class="card" data-category="hospitality" data-title="Resilience in Resort Design" data-summary="Operational and design adaptations to enhance climate resilience while preserving guest experience.">
+        <div class="card-visual" aria-hidden="true">
+          <svg viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg"><rect width="320" height="160" rx="6" fill="#070707"/><g fill="#c59b5c"><rect x="40" y="46" width="40" height="10"/><rect x="96" y="38" width="56" height="10"/><rect x="160" y="30" width="120" height="10"/></g></svg>
+        </div>
+        <div class="card-body">
+          <div class="meta">Hospitality &amp; Tourism</div>
+          <h3>Resilience in Resort Design</h3>
+          <p>Operational and design adaptations for climate risk mitigation in premium hospitality assets.</p>
+          <a class="read" href="#">Read note →</a>
+        </div>
+      </article>
+
+      <article class="card" data-category="real-estate" data-title="Opportunity Exchange: Pipeline Overview" data-summary="A regional pipeline of investable projects curated by The Buckler Group for institutional partners.">
+        <div class="card-visual" aria-hidden="true">
+          <svg viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg"><rect width="320" height="160" rx="6" fill="#0b0b0b"/><g fill="#c59b5c"><rect x="36" y="44" width="44" height="12"/><rect x="92" y="36" width="64" height="12"/><rect x="164" y="28" width="120" height="12"/></g></svg>
+        </div>
+        <div class="card-body">
+          <div class="meta">Real Estate &amp; Development</div>
+          <h3>Opportunity Exchange: Pipeline Overview</h3>
+          <p>Curated pipeline of investable projects across hospitality, mixed-use and infrastructure led by disciplined underwriting.</p>
+          <a class="read" href="#">Request pipeline →</a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="newsletter" style="margin-top:28px" id="newsletter">
+      <div>
+        <h4>Receive Strategic Intelligence Updates.</h4>
+        <p>Subscribe for concise, institutional briefings and executive summaries from The Buckler Group.</p>
+      </div>
+      <form id="subscribe" onsubmit="return handleSubscribe(event)">
+        <input id="email" name="email" type="email" placeholder="your@institution.com" required aria-label="Email address for subscription" />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container" style="display:flex;justify-content:space-between;align-items:center">
+    <div>© 2026 The Buckler Group</div>
+    <div style="color:var(--muted);font-size:12px">Caribbean Renaissance™ · Strategic Advisory · Insights</div>
+  </div>
+</footer>
+
+<script>
+  // Filtering and search
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const articles = Array.from(document.querySelectorAll('#articles .card'));
+  const q = document.getElementById('q');
+
+  function applyFilter(category) {
+    articles.forEach(a => {
+      const cat = a.dataset.category;
+      const title = a.dataset.title.toLowerCase();
+      const summary = a.dataset.summary.toLowerCase();
+      const term = q && q.value ? q.value.toLowerCase() : '';
+      let visible = (category === 'all' || cat === category);
+      if (term) {
+        visible = visible && (title.includes(term) || summary.includes(term));
+      }
+      a.style.display = visible ? '' : 'none';
+    });
+  }
+
+  filterButtons.forEach(btn => btn.addEventListener('click', () => {
+    filterButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.filter;
+    applyFilter(cat);
+  }));
+
+  if (q) {
+    q.addEventListener('input', () => {
+      const active = document.querySelector('.filter-btn.active');
+      const cat = active ? active.dataset.filter : 'all';
+      applyFilter(cat);
+    });
+  }
+
+  // Simple subscribe handler: opens mail client with prefilled subject as a fallback for static sites.
+  function handleSubscribe(e) {
+    e.preventDefault();
+    const email = document.getElementById('email').value.trim();
+    if (!email) return false;
+    const subject = encodeURIComponent('Subscribe: Strategic Intelligence Updates');
+    const body = encodeURIComponent('Please subscribe ' + email + ' to Strategic Intelligence Updates from The Buckler Group.');
+    // Attempt to POST to /subscribe endpoint if available, else open mailto as fallback
+    if (window.fetch && false) {
+      // no endpoint configured; placeholder for future integration
+    } else {
+      window.location.href = `mailto:browne.brain@gmail.com?subject=${subject}&body=${body}`;
+    }
+    return false;
+  }
+</script>
+</body>
+</html>
